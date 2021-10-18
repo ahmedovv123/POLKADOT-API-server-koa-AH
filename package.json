@@ -18,8 +18,10 @@
   },
   "homepage": "https://github.com/ahmedovv123/POLKADOT-API-server-koa-AH#readme",
   "dependencies": {
+    "@polkadot/api": "^6.4.1",
     "dotenv": "^10.0.0",
     "koa": "^2.13.3",
-    "koa-router": "^10.1.1"
+    "koa-router": "^10.1.1",
+    "pg": "^8.7.1"
   }
 }
