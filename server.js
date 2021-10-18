@@ -49,6 +49,26 @@ router.get('/api/blocks/:x/:n', async function (ctx){
     ctx.body = result;
 });
 
+router.get('/api/transactions/count', async function (ctx){
+    const result =  await transactionController.getTransactionsCount(ctx);
+    ctx.body = result;
+});
+
+router.get('/api/transactions/block/:blockHash', async function (ctx){
+    const result =  await transactionController.getTransactionsFromBlock(ctx);
+    ctx.body = result;
+});
+
+router.get('/api/transactions/hash/:transactionHash', async function (ctx){
+    const result =  await transactionController.getTransactionByHash(ctx);
+    ctx.body = result;
+});
+
+router.get('/api/transactions/:x/:n', async function (ctx){
+    const result =  await transactionController.getXTransactionsAfterNth(ctx);
+    ctx.body = result;
+});
+
 
 
 
