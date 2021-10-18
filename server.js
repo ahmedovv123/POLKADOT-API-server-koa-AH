@@ -9,23 +9,43 @@ require('dotenv').config()
 
 var router = Router();
 
-router.get('/accounts/count', async function (ctx){
+router.get('/api/accounts/count', async function (ctx){
     const result =  await accountController.getAccountsCount(ctx);
     ctx.body = result;
 });
 
-router.get('/accounts/transactions/count/:accountId', async function (ctx){
+router.get('/api/accounts/transactions/count/:accountId', async function (ctx){
     const result =  await accountController.getAccountTransactionsCount(ctx);
     ctx.body = result;
 });
 
-router.get('/accounts/transactions/:accountId', async function (ctx){
+router.get('/api/accounts/transactions/:accountId', async function (ctx){
     const result =  await accountController.getAccountTransactions(ctx);
     ctx.body = result;
 });
 
-router.get('/accounts/balance/:accountId', async function (ctx){
+router.get('/api/accounts/balance/:accountId', async function (ctx){
     const result =  await accountController.getAccountBalance(ctx);
+    ctx.body = result;
+});
+
+router.get('/api/blocks', async function (ctx){
+    const result =  await blockController.getLastBlock(ctx);
+    ctx.body = result;
+});
+
+router.get('/api/blocks/num/:blockNumber', async function (ctx){
+    const result =  await blockController.getBlockHashByNumber(ctx);
+    ctx.body = result;
+});
+
+router.get('/api/blocks/hash/:blockHash', async function (ctx){
+    const result =  await blockController.getBlockByHash(ctx);
+    ctx.body = result;
+});
+
+router.get('/api/blocks/:x/:n', async function (ctx){
+    const result =  await blockController.getXBlocksAfterNth(ctx);
     ctx.body = result;
 });
 
