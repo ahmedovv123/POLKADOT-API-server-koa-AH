@@ -18,6 +18,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Define variables
+      env:
+        DB_HOST: ${{ secrets.DB_HOST }}
+        DB_DATABASE: ${{ secrets.DB_DATABASE }}
+        DB_PASS: ${{ secrets.DB_PASS }}
+        DB_PORT: ${{ secrets.DB_PORT }}
+        DB_USER: ${{ secrets.DB_USER }}
+        SERVER_ADDRESS: ${{ secrets.SERVER_ADDRESS }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
