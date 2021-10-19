@@ -24,6 +24,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - name: Define variables
+      run: echo "Tags are > ${SERVER_ADDRESS}"
       env:
         DB_HOST: ${{ secrets.DB_HOST }}
         DB_DATABASE: ${{ secrets.DB_DATABASE }}
