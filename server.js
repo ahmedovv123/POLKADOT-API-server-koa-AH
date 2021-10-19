@@ -70,9 +70,6 @@ router.get('/api/transactions/:x/:n', async function (ctx){
     ctx.body = result;
 });
 
-
-
-
 const PORT = process.env.PORT || 8080;
 app.use(router.routes());
 
