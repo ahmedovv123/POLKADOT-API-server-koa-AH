@@ -115,42 +115,6 @@ paths:
                 type: array
         500:
           description: failure fetching accounts count
-  /api/accounts/transactions/{x}/{n}:
-    post:
-      summary: get address X transactions from Nth
-      tags:
-        - Accounts
-      description: get address X transactions from Nth
-      parameters:
-        - in: path
-          name: n
-          schema:
-            type: integer
-          required: true 
-          description: account nth transaction
-          example: 10
-        - in: path
-          name: x
-          schema:
-            type: integer
-          required: true 
-          description: transaction count
-          example: 5
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: string
-              example: '12xtAYsRUrmbniiWQqJtECiBQrMn8AypQcXhnQAc6RB6XkLW'
-      responses:
-        200:
-          description: Transactions
-          content:
-              application/json:
-                schema:
-                  type: array
-        500:
-          description: Failure fetching transactions
   /api/accounts/transactions/count/{adr}:
     get:
       summary: get address transactions count
@@ -259,7 +223,7 @@ paths:
         500:
           description: failure fetching block transactions
   /api/transactions/hash/{transactionHash}:
-    post:
+    get:
       summary: Get transaction by hash
       tags:
         - Transactions
