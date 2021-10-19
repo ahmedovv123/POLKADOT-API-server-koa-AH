@@ -78,7 +78,9 @@ app.pool = new Pool({
     host: process.env.DB_HOST || 'localhost',
     database: process.env.DB_DATABASE || 'postgres',
     password: process.env.DB_PASS || 'root',
-    port: process.env.DB_PORT || 5432
+    port: process.env.DB_PORT || 5432,
+    idleTimeoutMillis: 0,
+    connectionTimeoutMillis: 0,
 })
 
 app.listen(PORT, function() {
