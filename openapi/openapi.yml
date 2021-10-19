@@ -14,7 +14,7 @@ paths:
       summary: get last block
       tags:
         - Blocks
-      description: get last block
+      description: get last block 
       responses:
         200:
           description: Last block
